@@ -12,7 +12,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/custom', function () {
+
+    $msj = "Menasaje desde el servidor *-*";
+
+    $data = ['msj' => $msj, "edad" => 25];
+
+    return view('custom', $data);
+});
+
+*/
+
+Route::get('/', [App\Http\Controllers\TestController::class, 'test']);
